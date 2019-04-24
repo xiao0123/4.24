@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			.contain{
+				width: 500px;
+				height: 350px;
+				border: 1px solid red;
+				background: url(paoku/bg_1.png) repeat-x left top ;
+				position: relative;
+				-webkit-animation: bg 10s linear infinite;
+			}
+			.bg1{
+				width: 500px;
+				height: 200px;
+				background-image: url(paoku/bg_2.png);
+				background-size: 500px 200px;
+				position: absolute;
+				bottom: 20px;
+				left: 0px;
+				-webkit-animation: bg1 5s linear infinite;
+			}
+			.bg2{
+				width: 500px;
+				height: 50px;
+				background-image: url(paoku/bg.png);
+				position: absolute;
+				bottom: 0px;
+				left: 0px;
+			}
+			.man{
+				width: 123px;
+				height: 105px;
+				background-image: url(paoku/1.png);
+				position: absolute;
+				bottom: 50px;
+				left: 160px;
+				-webkit-animation: man 2s step-start infinite
+			}
+			
+			
+			@-webkit-keyframes bg{
+				from{background-position-x: 0px;}
+				to{background-position-x: -500px;}
+			}
+			@-webkit-keyframes bg1{
+				from{background-position-x: 0px;}
+				to{background-position-x: -500px;}
+			}
+			@-webkit-keyframes man{
+				0%{background-image: url(paoku/1.png);}
+				10%{background-image: url(paoku/2.png);}
+				20%{background-image: url(paoku/3.png);}
+				30%{background-image: url(paoku/4.png);}
+				40%{background-image: url(paoku/5.png);}
+				50%{background-image: url(paoku/6.png);}
+				60%{background-image: url(paoku/7.png);}
+				70%{background-image: url(paoku/8.png);}
+				80%{background-image: url(paoku/9.png);}
+				90%{background-image: url(paoku/10.png);}
+				100%{background-image: url(paoku/11.png);}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="contain">
+			<div class="bg1"></div>
+			<div class="bg2"></div>
+			<div class="man"></div>		
+		</div>
+		<script type="text/javascript">
+			document .onkeypress=function(e){
+				console.log(e.keyCode );
+				var man=document.querySelector(".man");
+				if(e.keyCode==32){
+					man.style.bottom="100px "
+				}
+			}
+			document .onkeyup  =function(e){
+				console.log(e.keyCode );
+				var man=document.querySelector(".man");
+				if(e.keyCode==32){
+					man.style.bottom="50px "
+				}
+			}
+			
+			
+			
+		</script>
+		
+	</body>
+</html>

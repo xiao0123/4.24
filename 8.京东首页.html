@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/swiper.min.css"/>
+		<style type="text/css">
+			
+			html{
+				font-size: calc(100vw/7.5);
+			}
+			
+			body {
+				margin: 0;
+			}
+			
+			.search-bar {
+				width: 100%;
+				height: 0.88rem;
+				/*background-color: red;*/
+				display: flex;
+				position: fixed;
+				z-index: 999;
+			}
+			.search-bar.fixed{
+				background-color: #e43130;
+			}
+			.search-bar>div{
+				float: left;
+			}
+			.search-form {
+				width: 5.1rem;
+				padding-top: 0.14rem;
+				box-sizing: border-box;
+			}
+			
+			.search-form input {
+				width: 100%;
+				float: left;
+				height: 0.6rem;
+				border: none;
+				border-radius: 0.3rem;
+				box-sizing: border-box;
+			}
+			
+			.menu,
+			.login {
+				width:1.2rem;
+				height: 0.88rem;
+				/*background-color: blue;*/
+				color:white;
+				font-size: 0.28rem;
+				text-align: center;
+				line-height: 0.88rem;
+			}
+			.swiper-container img{
+				width: 100%;
+			}
+		</style>
+
+	</head>
+
+	<body>
+        <!--导航开始-->
+		<div class="search-bar">
+			<div class="menu">菜单</div>
+			<div class="search-form">
+				<input type="" name="" id="" value="" />
+			</div>
+			<div class="login">登录</div>
+		</div>
+		<!--导航结束	-->
+		<!--轮播图开始-->
+		<div class="swiper-container">
+		    <div class="swiper-wrapper">
+		      <div class="swiper-slide"><img src="images/swiper_1.jpg"/></div>
+		      <div class="swiper-slide"><img src="images/swiper_2.jpg"/></div>
+		      <div class="swiper-slide"><img src="images/swiper_3.jpg"/></div>
+		      
+		    </div>
+		    <!-- Add Pagination -->
+		    <div class="swiper-pagination"></div>
+  		</div>
+ 		 <!--轮播图结束-->		
+  		<div style="height: 1000px;"></div>
+		
+		<script src="JS/swiper.min.js" type="text/javascript" charset="utf-8"></script>
+		<script>
+//			轮播图swiper初始化
+		    var swiper = new Swiper('.swiper-container', {
+		      pagination: {
+		        el: '.swiper-pagination',
+		      },
+		    });
+//			轮播图swiper结束		    
+		    //鼠标
+		    var searchBar=document.querySelector(".search-bar")
+		    
+		    window.addEventListener("scroll",function(){
+		    	var t=document.documentElement.scrollTop || window.pageYOffset || document.body.scrollTop;
+		    	
+		    	if (t>50) {
+		    		searchBar.setAttribute("class","search-bar fixed")
+		    	} else{
+		    		searchBar.setAttribute("class","search-bar")
+		    	}
+		    	
+		    })
+		    
+		    
+		    
+  		</script>
+	</body>
+
+</html>
